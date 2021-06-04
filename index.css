@@ -1,0 +1,492 @@
+/* fonts */
+@font-face {
+    font-family: "Circular Medium";
+    src: url("./fonts/circular-medium.ttf");
+}
+@font-face {
+    font-family: "Circular Bold";
+    src: url("./fonts/circular-bold.ttf");
+}
+@font-face {
+    font-family: "Futura Bold";
+    src: url("./fonts/futura-bold.ttf");
+}
+/* global */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Circular Medium", sans-serif;
+    color: white;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+    background: black;
+}
+
+/* background animation (canvas) */
+
+canvas {
+    display: block;
+    position: fixed;
+    z-index: 1;
+}
+
+/* main */
+#main {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 3;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer {
+    display: none;
+}
+
+/* pages */
+
+#main>div {
+    height: 95%;
+    margin: auto 10px;
+    border-radius: 20px;
+    /*border: 1px solid red;*/
+    /*overflow: hidden;*/
+    position: relative;
+    flex: 1;
+}
+
+/* propositions */
+.propositionsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.propositionsContainer h2 {
+    font-size: 30px;
+    font-family: "Circular Bold", sans-serif;
+    margin-left: 20px;
+}
+
+.tonightThemeContainer {
+    background: #212121;
+    height: 100px;
+    border-radius: 10px;
+    margin: 10px auto;
+}
+
+.tonightThemeContainer>p {
+    text-align: center;
+}
+.themeEmoji {
+    font-size: 35px;
+}
+.tonight {
+    font-size: 20px;
+}
+.themeDesc {
+    color: #757575;
+    font-size: 15px;
+}
+
+.proposeButton {
+    background-color: #AB47BC;
+    width: 90%;
+    padding: 10px;
+    display: block;
+    border-radius: 15px;
+    font-size: 25px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    outline:none;
+    border: none;
+    transition: background-color 0.2s;
+}
+
+.proposeButton:hover {
+    cursor: pointer;
+    background-color: #4f1f57;
+}
+
+.proposedSongsList {
+    height: 80%;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style-type: none;
+}
+
+.proposedSongsList>li {
+    width: 85%;
+}
+
+.proposedSongsList::-webkit-scrollbar {
+    width: 0;
+}
+
+
+.proposedSong {
+    background: #212121;
+    height: 50px;
+    display: flex;
+    border-radius: 10px;
+    margin: 10px auto;
+}
+
+.proposedSong:-webkit-any-link {
+    text-decoration: none;
+}
+
+.proposedSong>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.proposedSongInfos {
+    font-size: 18px;
+}
+
+.proposedSongAuthor {
+    color: #757575;
+    font-size: 14px;
+}
+
+.proposedSongCover {
+    height: 70%;
+    display: block;
+    border-radius: 50%;
+    margin: 7px 15px 7px 7px;
+}
+
+/* songs */
+.music {
+    height: 20%;
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+    background: linear-gradient(to bottom, #d65509, black);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.musicInfos {
+    width: 50%;
+    margin-top: 10px;
+}
+
+.musicTitle {
+    font-size: 22px;
+    color: white;
+}
+
+.musicArtist {
+    font-size: 17px;
+    color: white;
+}
+
+p.proposedBy {
+    color: #616161;
+    font-size: 15px;
+    border: 1px solid #616161;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.cover {
+    height: 90px;
+    width: auto;
+    transition: filter 0.2s;
+}
+
+.cover:hover {
+    cursor: pointer;
+    filter: brightness(80%);
+}
+
+/* opinion */
+.opinionButtonsContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 8%;
+    margin-top: 20px;
+}
+
+.opinionButtonsContainer>button {
+    width: 45%;
+    padding: 10px 0;
+    background-color: #212121;
+    outline: none;
+    border: none;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    transition: background-color 0.2s;
+}
+
+.opinionButtonsContainer>button:hover {
+    cursor: pointer;
+    background-color: #AB47BC;
+}
+
+/* chat */
+.chat {
+    height: 62%;/* without opinion: 75% */
+    width: 100%;
+    border-radius: 0 0 20px 20px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    transition: height 0.3s;
+}
+
+.messagesList {
+    height: 90%;
+    overflow-y: scroll;
+    list-style-type: none;
+}
+.messagesList::-webkit-scrollbar {
+    width: 5px;
+    background: #4f1f57;
+    border-radius: 10px;
+}
+.messagesList::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #AB47BC;
+}
+
+.messageAuthor {
+    color: #AB47BC;
+}
+
+.message {
+    margin: 10px;
+    font-size: 14px;
+}
+
+.adminMessage {
+    padding: 10px;
+    background: #212121;
+    font-size: 15px;
+    width: 90%;
+    margin: 10px auto;
+}
+
+.messageForm {
+    height: 12%;
+    display: flex;
+    background: black;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#inputMessage {
+    width: 80%;
+    background: #212121 !important;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+    border: none;
+}
+
+#inputMessage:-webkit-autofill,
+#inputMessage:-webkit-autofill:hover,
+#inputMessage:-webkit-autofill:focus {
+    -webkit-text-fill-color: white;
+    -webkit-box-shadow: 0 0 0px 1000px #212121 inset;
+}
+
+.sendMessageImg {
+    height: 35px;
+    filter: grayscale(100%) contrast(200%);
+    transition: filter 0.1s;
+}
+
+.sendMessageImg:hover {
+    cursor: pointer;
+    filter: grayscale(0%);
+}
+
+/* profile */
+.profileContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+/* profile header */
+.profilePagesList {
+    list-style-type: none;
+    margin-left: 20px;
+}
+.profilePagesList>li {
+    display: inline-block;
+    color: #757575;
+    font-family: "Circular Bold", sans-serif;
+    font-size: 23px;
+    margin: auto 5px;
+    transition: font-size 0.4s, color 0.4s;
+}
+
+.profilePagesList>li:hover {
+    cursor: pointer;
+}
+
+.selectedProfilePage {
+    font-size: 30px !important;
+    color: white !important;
+}
+
+/* voted songs list */
+.votedSongsList {
+    overflow-y: scroll;
+    height: 90%;
+}
+.votedSongsList::-webkit-scrollbar {
+    width: 0;
+}
+
+.votedSong {
+    height: 70px;
+    width: 100%;
+    display: flex;
+    border-radius: 10px;
+    margin: 10px 10px 10px auto;
+}
+
+.votedSong:-webkit-any-link {
+    text-decoration: none;
+}
+
+.votedSong:active .votedSongInfos {
+    color: #757575;
+}
+
+.votedSong:active .votedSongDate {
+    color: #212121;
+}
+
+.votedSong:active .votedSongCover {
+    filter: brightness(70%);
+}
+
+.votedSongCover {
+    height: 80%;
+    display: block;
+    filter: brightness(100%);
+    transition: filter 0.05s;
+    margin: 7px 15px 7px 7px;
+}
+
+.votedSong>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.votedSongInfos {
+    font-size: 18px;
+    transition: color 0.05s;
+}
+
+.votedSongDate {
+    color: #757575;
+    font-size: 14px;
+    transition: color 0.05s;
+}
+
+@media screen and (max-width: 767.98px) {/*mobile*/
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    #main {
+        height: 90%;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    #main>div {
+        margin: 0;
+        width: 100%;
+    }
+
+    .messagesList {
+        height: 80%;
+    }
+
+    .music {
+        border-radius: 0;
+    }
+
+    .chat {
+        height: 65%;
+    }
+
+    .messageForm {
+        margin-bottom: 15px;
+    }
+
+    footer {
+        background: #212121;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        bottom: 0;
+        z-index: 4;
+        height: 8%;
+        width: 100%;
+    }
+
+    footer>img {
+        height: 50%;
+        filter: brightness(100%) grayscale(100%);
+        transition: filter 0.1s;
+    }
+
+    .selectedPageIcon {
+        filter: grayscale(0%);
+    }
+
+    footer>img:active {
+        filter: brightness(60%);
+    }
+
+    .propositionsContainer, .profileContainer {
+        display: none;
+    }
+
+    .proposedSong, .tonightThemeContainer {
+        margin: 5px;
+    }
+
+    h2, .profilePagesList {
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+
+    .proposeButton {
+        font-size: 18px;
+    }
+}
+
+/*@media (max-width: 1230px) {
+
+}*/
+
+
