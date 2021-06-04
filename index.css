@@ -194,9 +194,9 @@ footer {
 }
 
 p.proposedBy {
-    color: #616161;
+    color: #757575;
     font-size: 15px;
-    border: 1px solid #616161;
+    border: 1px solid #757575;
     border-radius: 5px;
     padding: 5px;
     margin-top: 5px;
@@ -306,7 +306,7 @@ p.proposedBy {
 #inputMessage:-webkit-autofill:hover,
 #inputMessage:-webkit-autofill:focus {
     -webkit-text-fill-color: white;
-    -webkit-box-shadow: 0 0 0px 1000px #212121 inset;
+    -webkit-box-shadow: 0 0 0 1000px #212121 inset;
 }
 
 .sendMessageImg {
