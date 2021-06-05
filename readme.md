@@ -5,5 +5,5 @@ Le Règlement Radio est une application lancé par le Youtubeur Le Règlement (h
 La radio streame de 20h à minuit des sons proposés par les utilisateurs.
 
 ## Le portage web
-Reglement Radio Web est un portage de cette appli mobile pour les navigateurs internet. 
-Vous pouvez actuellement consulter la dernière version de cette maquette sur https://golgot.fr/reglement
+Reglement Radio Web est un portage de cette appli mobile pour les navigateurs internet.  
+Vous pouvez actuellement consulter la dernière version de cette maquette sur https://golgot.fr/reglement .
