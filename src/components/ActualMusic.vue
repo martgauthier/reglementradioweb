@@ -24,7 +24,7 @@ export default {
 	height: 20%;
 	width: 100%;
 	border-radius: 20px 20px 0 0;
-	background: linear-gradient(to bottom, #d65509, black);
+	background: linear-gradient(to bottom, #d65509, #00000000);
 	display: flex;
 	justify-content: space-around;
 	align-items: center;

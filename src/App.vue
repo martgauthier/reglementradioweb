@@ -140,11 +140,12 @@ export default {
             }
         }
     },
-    created() {
-        window.addEventListener("resize", this.checkIfFooterDisplayed)
-    },
 	mounted() {
+        window.addEventListener("resize", this.checkIfFooterDisplayed)
         this.checkIfFooterDisplayed()
+
+		//ascii art
+		console.log("%c ____  _____ _____ _     _____ _      _____ _      _____ \n/  __\\/  __//  __// \\   /  __// \\__/|/  __// \\  /|/__ __\\\n|  \\/||  \\  | |  _| |   |  \\  | |\\/|||  \\  | |\\ ||  / \\  \n|    /|  /_ | |_//| |_/\\|  /_ | |  |||  /_ | | \\||  | |  \n\\_/\\_\\\\____\\\\____\\\\____/\\____\\\\_/  \\|\\____\\\\_/  \\|  \\_/  ", "color: orange;")
     },
     unmounted() {
         window.removeEventListener("resize", this.checkIfFooterDisplayed)
@@ -186,6 +187,16 @@ body {
 #app {
 	width: 100%;
 	height: 100%;
+	animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 100%;
+	}
 }
 
 /* main */

@@ -4,7 +4,7 @@
 			<span class="messageAuthor">Auteur: </span>lorem ipszum les mecs on écrit
 			nimp wersh
 		</li>
-		<li class="adminMessage">⚡ Un message que l'admin pourrait envoyer!</li>
+		<li class="adminMessage">⚡ INSTAGRAM: @mart.gauthier</li>
 	</ul>
 </template>
 

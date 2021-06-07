@@ -59,7 +59,7 @@ let points = []
 
 class MovingPoint {
 	constructor() {
-		this.speed = getRandom(2, 7);
+		this.speed = getRandom(1, 4);
 		switch (
 			getRandomInt(0, 3) //0: start from left, 1: ... right, 2: ... top, 3: ... bottom
 		) {
@@ -84,7 +84,7 @@ class MovingPoint {
 				this.angle = getRandom(0, 2 * Math.PI);
 				break;
 		}
-		this.radius = getRandomInt(1, 3);
+		this.radius = getRandomInt(1, 2);
 		this.xMove = Math.cos(this.angle) * this.speed;
 		this.yMove = -Math.sin(this.angle) * this.speed;
 	}
