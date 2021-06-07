@@ -187,7 +187,7 @@ body {
 #app {
 	width: 100%;
 	height: 100%;
-	animation: fadeIn 0.5s forwards;
+	animation: fadeIn 1s forwards;
 }
 
 @keyframes fadeIn {
